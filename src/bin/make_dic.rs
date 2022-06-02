@@ -27,6 +27,7 @@ fn main() {
         }
         Err(t) => {
             println!("can not write to dic because of {}", t);
+            exit(1);
         }
     }
     write_to_words(&dic, path_of_word).unwrap();
