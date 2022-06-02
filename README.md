@@ -1,12 +1,17 @@
 # phoneme_from_word
 
-A phoneme generator from word lists, using CMU dict and BigCiDian.
+A phoneme generator from word lists, using cmu dict and BigCiDian.
 
-Designed for [lyrics-aligner](https://github.com/schufo/lyrics-aligner) at first, aiming to simplify the phoneme generator workflow, as the workflow provided is somewhat not convenient.
+Designed for [lyrics-aligner](https://github.com/schufo/lyrics-aligner) at first, aiming to simplify the phoneme generator workflow, as the recommanded workflow of which is somewhat not convenient.
+
+Current stage: The progarm v0.1.0 can works with lyrics-aligner well.
 
 Plan to add chinese support as well, you can see the process at [my fork of lyrics-aligner](https://github.com/leavelet/lyrics-aligner) 
 
-
+usage example:
+```
+make_dic cmudict.txt ./files
+```
 
 Origin license for CMU Dictionary
 
