@@ -15,7 +15,6 @@ fn main() {
     let dictfile = env::args().nth(1).expect("no dictfile!");
     // let lyric_dir = env::args().nth(2).expect("no lyricdir!");
     let wordfile_dir = env::args().nth(2).expect("no wordfile dir!");
-
     let path_of_dict = Path::new(&dictfile);
     let path_of_word = Path::new(&wordfile_dir);
     // let path_of_lyric = Path::new(&lyric_dir);
@@ -23,12 +22,12 @@ fn main() {
     let mut dic = HashMap::new();
     match make_dic(path_of_dict, &mut dic) {
         Ok(()) => {
-            println!("diction fine!");
+            println!("dictionary fine!");
         }
         Err(t) => {
             println!("can not write to dic because of {}", t);
             exit(1);
         }
     }
-    write_to_words(&dic, path_of_word).unwrap();
+    write_to_words(&dic, &WordList::Outer(Box::new(path_of_word.to_owned())), ".", None).unwrap();
 }
