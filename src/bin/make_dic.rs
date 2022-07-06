@@ -1,14 +1,14 @@
 extern crate phoneme_lib;
-use phoneme_lib::{phoneme_lib::*};
+use phoneme_lib::*;
 
-use std::collections::{HashMap};
-use std::path::Path;
+use std::collections::HashMap;
 use std::env;
+use std::path::Path;
 use std::process::exit;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() == 1{
+    if args.len() == 1 {
         println!("usage: make_dict <dictfile> <wordfile_dir>");
         exit(1);
     }
@@ -29,5 +29,11 @@ fn main() {
             exit(1);
         }
     }
-    write_to_words(&dic, &WordList::Outer(Box::new(path_of_word.to_owned())), ".", None).unwrap();
+    write_to_words(
+        &dic,
+        &WordList::Outer(Box::new(path_of_word.to_owned())),
+        ".",
+        None,
+    )
+    .unwrap();
 }
